@@ -30,7 +30,7 @@ RUN tar -C /root/ -x -z -f /root/eccodes-2.22.1-Source.tar.gz && \
   make install && \
   DESTDIR=/root/target make install
 
-ADD https://github.com/projecthorus/tawhiri-downloader/archive/master.zip /root/tawhiri-downloader-master.zip
+ADD https://github.com/cuspaceflight/tawhiri-downloader/archive/master.zip /root/tawhiri-downloader-master.zip
 RUN unzip /root/tawhiri-downloader-master.zip -d /root && \
   rm /root/tawhiri-downloader-master.zip && \
   cd /root/tawhiri-downloader-master && \
