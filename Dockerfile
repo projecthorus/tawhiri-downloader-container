@@ -50,4 +50,8 @@ RUN apk add --no-cache \
 
 COPY --from=build /root/target /
 
+RUN mkdir -p /srv/tawhiri-datasets
+
+WORKDIR /root
+
 ENTRYPOINT ["/root/tawhiri-downloader/default/main.exe"]
