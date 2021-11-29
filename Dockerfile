@@ -46,12 +46,18 @@ FROM alpine:3.14
 RUN apk add --no-cache \
   libcurl \
   libffi \
-  tzdata
+  tzdata \
+  python3 \
+  py3-boto3
 
 COPY --from=build /root/target /
+
+COPY scripts/download.py /
+
+RUN chmod a+x /download.py
 
 RUN mkdir -p /srv/tawhiri-datasets
 
 WORKDIR /root
 
-ENTRYPOINT ["/root/tawhiri-downloader/default/main.exe"]
+ENTRYPOINT ["/download.py"]
