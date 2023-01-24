@@ -16,3 +16,8 @@ To run in _daemon_ mode:
 ```sh
 docker run --rm --entrypoint /root/tawhiri-downloader/default/main.exe -i -t -e TZ=UTC -v /opt/tawhiri:/srv ghcr.io/projecthorus/tawhiri-downloader-container:latest daemon
 ```
+
+To download a specific dataset:
+```sh
+docker run --platform=linux/x86_64 --entrypoint "/root/tawhiri-downloader/default/main.exe" -e TZ=UTC -v ~/tawhiri:/srv/tawhiri-datasets ghcr.io/projecthorus/tawhiri-downloader-container:latest  one -base-url aws-mirror -log-level DEBUG 2023012318
+```
