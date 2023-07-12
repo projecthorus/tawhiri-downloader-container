@@ -20,7 +20,7 @@ RUN apk add --no-cache \
 RUN opam init -y --disable-sandboxing
 
 # RUN opam install -y core async ctypes ctypes-foreign ocurl
-RUN opam install -y core=0.14.1 async=0.14.0 ctypes=0.18.0 ctypes-foreign=0.18.0 ocurl=0.9.1
+RUN opam install -y core=v0.14.1 async=v0.14.0 ctypes=0.18.0 ctypes-foreign=0.18.0 ocurl=0.9.1
 
 ADD https://confluence.ecmwf.int/download/attachments/45757960/eccodes-2.22.1-Source.tar.gz?api=v2 /root/eccodes-2.22.1-Source.tar.gz
 RUN tar -C /root/ -x -z -f /root/eccodes-2.22.1-Source.tar.gz && \
