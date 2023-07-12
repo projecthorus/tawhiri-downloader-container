@@ -17,7 +17,7 @@ RUN apk add --no-cache \
   opam \
   unzip
 
-RUN opam init -y --disable-sandboxing
+RUN opam init -y --disable-sandboxing --compiler=4.12.0
 
 # RUN opam install -y core async ctypes ctypes-foreign ocurl
 RUN opam install -y core=v0.14.1 async=v0.14.0 ctypes=0.18.0 ctypes-foreign=0.18.0 ocurl=0.9.1
